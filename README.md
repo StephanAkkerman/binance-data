@@ -1,4 +1,3 @@
-# BinanceExtras
 This repository consists of code usefull when trading on Binance. You will need to have an account to use this, since it uses the API keys.
 
 # BinanceData
