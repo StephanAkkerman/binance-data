@@ -1,5 +1,3 @@
-This repository consists of code usefull when trading on Binance. You will need to have an account to use this, since it uses the API keys.
-
 # BinanceData
 To make the BinanceData.py function:
 Change the 'publicKey' and 'privateKey' in Client on line 8 to your Binance API keys. 
