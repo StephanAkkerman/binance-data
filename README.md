@@ -1,11 +1,13 @@
 # BinanceData
 **To make the BinanceData.py function:** \
-Change the 'publicKey' and 'privateKey' in Client on line 8 to your Binance API keys. 
+Change the 'publicKey' and 'privateKey' in Client on line 10 to your Binance API keys. 
 
 How to use:
 - Add the BinanceData.py to same directory you're working in.
 - Write: from BinanceData import fetchData
 - To get the latest daily data on the BTCUSDT pair, write: fetchData(symbol="BTCUSDT", amount=1, timeframe='1d')
+
+Supported timeframes are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'
 
 **Note: The volume is converted to USDT in this example, volume will always be converted to the second coin in a pair.**
 
