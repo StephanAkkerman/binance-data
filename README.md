@@ -2,8 +2,12 @@
 To make the BinanceData.py function:
 Change the 'publicKey' and 'privateKey' in Client on line 8 to your Binance API keys. 
 
-Note:
-Currently only gets the 4h candles, later on I will add more functionality. It returns a pandas DataFrame of the OHCLV in chronological order (latest to newest).
+How to use:
+- Add the BinanceData.py to same directory you're working in.
+- Write: from BinanceData import fetchData
+- To get the latest daily data on the BTCUSDT pair, write: fetchData(symbol="BTCUSDT", amount=1, timeframe='1d')
+
+Note: The volume is converted to USDT in this case, if you write "ETHBTC" it will be converted to BTC.
 
 # BinanceAlert and run.py
 To make BinanceAlertV3.py function:
