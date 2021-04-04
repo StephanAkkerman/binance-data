@@ -14,7 +14,7 @@ Supported time frames are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h
 **Note: The volume is converted to USDT in this example, volume will always be converted to the second coin in a pair.**
 
 # BinanceAlert and run.py
-**To make BinanceAlertV3.py function:** \
+**To make BinanceAlertV3.py function:** 
 - Change the 'publicKey' and 'privateKey' in Client and altClient on lines 19, 22, 593 and 594 to your Binance API keys.
 - altClient might not be necessary if you change some settings, but I use it to make sure it won't stop because it is exceeding the max requests.
 - run.py is necessary if you want to run it on Linux, which is what I am currently doing. 
