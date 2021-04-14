@@ -1,9 +1,11 @@
 # BinanceData
-To make the BinanceData.py function:
-Change the 'publicKey' and 'privateKey' in Client on line 8 to your Binance API keys. 
+BinanceData is a simple Python script that lets you fetch data using their API. You don't need to have an account to make this work.
+Use fetchData(symbol, amount, timeframe) to get a pandas DataFrame consisting of the data.
 
-Note:
-Currently only gets the 4h candles, later on I will add more functionality. It returns a pandas DataFrame of the OHCLV in chronological order (latest to newest).
+Symbol is a string, combine the coin you want with the pair available on Binance. For instance "BTCUSDT" for BTC/USDT.
+Amount is an int, it is the amount of rows that should be returned divided by 500. For instance 2 will return 1000 rows.
+Timeframe is a string, a timeframe available on Binance. For instance "4h" for the 4 hour candles.
+All the timeframe options are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'
 
 # BinanceAlert and run.py
 To make BinanceAlertV3.py function:
