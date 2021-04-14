@@ -2,11 +2,13 @@
 BinanceData is a simple Python script that lets you fetch data using their API. You don't need to have an account to make this work.
 Use fetchData(symbol, amount, timeframe) to get a pandas DataFrame consisting of the data.
 
-Symbol is a string, combine the coin you want with the pair available on Binance. For instance "BTCUSDT" for BTC/USDT.
-Amount is an int, it is the amount of rows that should be returned divided by 500. For instance 2 will return 1000 rows.
-Timeframe is a string, a timeframe available on Binance. For instance "4h" for the 4 hour candles.
-All the timeframe options are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'
+How to use:
+- Add the BinanceData.py to same directory you're working in.
+- Write: from BinanceData import fetchData.
+- To get the latest 500 daily data points of OHLCV on the BTCUSDT pair, write: fetchData(symbol="BTCUSDT", amount=1, timeframe='1d')
+Symbol can be any pair availble on Binance. Amount is the amount of rows you would like to have returned times 500, so amount=2 will return 1000 rows. Supported time frames are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'.
 
+Note: The volume is converted to USDT in this example, volume will always be converted to the second coin in a pair.
 # BinanceAlert and run.py
 To make BinanceAlertV3.py function:
 Change the 'publicKey' and 'privateKey' in Client and altClient on lines 19, 22, 593 and 594 to your Binance API keys.
