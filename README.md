@@ -22,3 +22,6 @@ BinanceAlert provides alerts on the USDT pairs. These alerts are based on multip
 
 Note:
 Currently BinanceAlert only support the USDT pairs, adding BTC pairs might be done later.
+
+# Trailing Stop Loss
+For my tralling stop loss implementation for Binance, check out: https://github.com/StephanAkkerman/Binance_Trailing_Stop_Loss.
