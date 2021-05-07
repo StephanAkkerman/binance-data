@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import math
-import ta
 from datetime import datetime
 from binance.client import Client
 
