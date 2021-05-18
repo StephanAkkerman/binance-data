@@ -25,3 +25,6 @@ Currently BinanceAlert only support the USDT pairs, adding BTC pairs might be do
 
 # Trailing Stop Loss
 For my tralling stop loss implementation for Binance, check out: https://github.com/StephanAkkerman/Binance_Trailing_Stop_Loss.
+
+# Charts
+I made a program that shows the charts of your spot holdings, in a Tradingview Pro kind of way: https://github.com/StephanAkkerman/Binance_Charts
