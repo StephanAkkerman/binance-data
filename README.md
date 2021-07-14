@@ -11,3 +11,5 @@ Symbol can be any pair availble on Binance. Amount is the amount of rows you wou
 
 Note: The volume is converted to USDT in this example, volume will always be converted to the second coin in a pair.
 
+# Different exchange?
+If you need another exchange for some reason, check out: https://github.com/StephanAkkerman/Crypto_OHLCV. It works the same, but there are more exchanges available.
