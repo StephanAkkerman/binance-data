@@ -1,0 +1,4 @@
+numpy==1.17.3
+python_binance==0.7.10
+pandas==0.24.2
+binance==0.3

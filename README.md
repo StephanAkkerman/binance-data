@@ -1,15 +1,24 @@
 # BinanceData
 BinanceData is a simple Python script that lets you fetch data using their API. You don't need to have an account to make this work.
-Use fetchData(symbol, amount, timeframe) to get a pandas DataFrame consisting of the data.
+Using `fetchData(symbol, amount, timeframe)` returns a Pandas DataFrame readible by TensorTrade consisting of the most up to date data of Binance.
 
-How to use:
-- Add the BinanceData.py to same directory you're working in.
-- Write: from BinanceData import fetchData.
-- To get the latest 500 daily data points of OHLCV on the BTCUSDT pair, write: fetchData(symbol="BTCUSDT", amount=1, timeframe='1d')
+## How to use
+- Add the `data.py` to same directory you're working in.
+- Write: `from data import fetchData`.
+- To get the latest 500 daily data points of OHLCV on the BTCUSDT pair, write: `fetchData(symbol="BTCUSDT", amount=1, timeframe='1d')`
 
-Symbol can be any pair availble on Binance. Amount is the amount of rows you would like to have returned times 500, so amount=2 will return 1000 rows. Supported time frames are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'.
+## Arguments
+### Symbol
+Symbol can be any pair availble on Binance. 
 
-Note: The volume is converted to USDT in this example, volume will always be converted to the second coin in a pair.
+### Amount
+Amount is the amount of rows you would like to have returned times 500, so amount=2 will return 1000 rows. 
 
-# Different exchange?
-If you need another exchange for some reason, check out: https://github.com/StephanAkkerman/Crypto_OHLCV. It works the same, but there are more exchanges available.
+### Timeframe
+Supported time frames are: '1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w', '1M'.
+
+## Note
+The volume is converted to USDT in this example, volume will always be converted to the second coin in a pair.
+
+## Different exchange?
+If you need another exchange for some reason, check out: https://github.com/StephanAkkerman/Crypto_OHLCV. It functions the same as this script, but there are more exchanges available.
