@@ -1,11 +1,12 @@
 # BinanceData
 BinanceData is a simple Python script that lets you fetch data using their API. You don't need to have an account to make this work.
-Using `fetchData(symbol, amount, timeframe)` returns a Pandas DataFrame readible by TensorTrade consisting of the most up to date data of Binance.
+Using `fetchData(symbol, amount, timeframe, as_csv, file_name)` returns a Pandas DataFrame readible by TensorTrade consisting of the most up to date data of Binance.
 
 ## How to use
 - Add the `data.py` to same directory you're working in.
 - Write: `from data import fetchData`.
 - To get the latest 500 daily data points of OHLCV on the BTCUSDT pair, write: `fetchData(symbol="BTCUSDT", amount=1, timeframe='1d')`
+- To save the data as a .csv file you can write: `fetchData(symbol="BTCUSDT", amount=1, timeframe='1d', as_csv=True)` this will save the DataFrame as BTCUSDT_1d.csv, if you would like a different name you can use the `file_name` parameter.
 
 ## Arguments
 ### Symbol

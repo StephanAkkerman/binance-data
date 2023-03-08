@@ -1,14 +1,10 @@
-import numpy as np
 import pandas as pd
-import math
-from datetime import datetime
 from binance.client import Client
 
 # Initialize the Client
 client = Client()
 
-
-def fetchData(symbol, amount, timeframe):
+def fetchData(symbol = "BTCUSDT", amount = 1, timeframe = '1d', as_csv = False, file_name = None):
     """
     Pandas DataFrame with the latest OHLCV data from Binance.
 
@@ -25,38 +21,42 @@ def fetchData(symbol, amount, timeframe):
     # 1m = 60000 ms
     if timeframe == "1m":
         diff = 60000
-    if timeframe == "3m":
+    elif timeframe == "3m":
         diff = 3 * 60000
-    if timeframe == "5m":
+    elif timeframe == "5m":
         diff = 5 * 60000
-    if timeframe == "15m":
+    elif timeframe == "15m":
         diff = 15 * 60000
-    if timeframe == "30m":
+    elif timeframe == "30m":
         diff = 30 * 60000
 
     # 1h = 3600000 ms
-    if timeframe == "1h":
+    elif timeframe == "1h":
         diff = 3600000
-    if timeframe == "2h":
+    elif timeframe == "2h":
         diff = 2 * 3600000
-    if timeframe == "4h":
+    elif timeframe == "4h":
         diff = 4 * 3600000
     if timeframe == "6h":
         diff = 6 * 3600000
-    if timeframe == "8h":
+    elif timeframe == "8h":
         diff = 8 * 3600000
-    if timeframe == "12h":
+    elif timeframe == "12h":
         diff = 12 * 3600000
 
     # 1d = 86400000 ms
-    if timeframe == "1d":
+    elif timeframe == "1d":
         diff = 86400000
-    if timeframe == "3d":
+    elif timeframe == "3d":
         diff = 3 * 86400000
-    if timeframe == "1W":
+    elif timeframe == "1W":
         diff = 604800000
-    if timeframe == "1M":
+    elif timeframe == "1M":
         diff = 2629800000
+
+    else:
+        print("Invalid timeframe")
+        return
 
     # Get current time, by getting the latest candle
     end = client.get_klines(symbol=symbol, interval=timeframe)[-1][0]
@@ -65,7 +65,7 @@ def fetchData(symbol, amount, timeframe):
     candleList = []
 
     # Get the amount of data specified by amount parameter
-    for x in range(amount):
+    for _ in range(amount):
         # Make the list from oldest to newest
         candleList = (
             client.get_klines(symbol=symbol, interval=timeframe, endTime=end)
@@ -94,8 +94,11 @@ def fetchData(symbol, amount, timeframe):
     # Volume in USDT
     df["volume"] = df.volume * df.close
 
-    return df
+    if as_csv:
+        if file_name == None:
+            file_name = symbol + "_" + timeframe + ".csv"
 
-    # === OPTIONAL ===
-    # Convert to csv file
-    # df.to_csv(r'YOURLOCATION',index=False)
+        df.to_csv(f"data/{file_name}",index=False)
+        print(f"Succesfully saved {len(df)} rows to {file_name}")
+
+    return df
