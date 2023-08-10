@@ -1,4 +1,8 @@
 # Binance Data
+
+> **note**
+> I have made an improved version that supports more exchanges (including Binance), you can find that repository [here](https://github.com/StephanAkkerman/crypto-ohlcv).
+
 binance-data is a simple Python script that lets you fetch data using their API. You don't need to have an account to make this work.
 Using `fetchData(symbol, amount, timeframe, as_csv, file_name)` returns a Pandas DataFrame readible by TensorTrade consisting of the most up to date data of Binance.
 
